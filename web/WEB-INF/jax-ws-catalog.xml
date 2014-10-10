@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8095/ServicioRansaNetWs/services/UsuarioRansaServiceImpl?wsdl" uri="wsdl/localhost_8095/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.wsdl"/>
+    <system systemId="http://localhost:8095/ServicioRansaNetWs1/services/UsuarioRansaServiceImpl?wsdl" uri="wsdl/localhost_8095/ServicioRansaNetWs1/services/UsuarioRansaServiceImpl.wsdl"/>
+    <system systemId="http://10.90.6.140:9090/ServicioRansaNetWs/services/UsuarioRansaServiceImpl?wsdl" uri="wsdl/10.90.6.140_9090/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.wsdl"/>
+    <system systemId="http://visitasadm.inpe.gob.pe/ServicioRansaNetWs/services/UsuarioRansaServiceImpl?wsdl" uri="wsdl/visitasadm.inpe.gob.pe/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.wsdl"/>
+</catalog>

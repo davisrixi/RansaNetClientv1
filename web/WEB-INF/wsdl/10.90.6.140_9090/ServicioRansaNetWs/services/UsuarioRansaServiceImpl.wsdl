@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://service.ransa.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://modelo.ransa.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://service.ransa.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax22="http://modelo.ransa.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.ransa.com">
+            <xs:import namespace="http://modelo.ransa.com/xsd"/>
+            <xs:element name="insertarPedidoMovimiento">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idPedido" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idEstadoPedido" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idUsuario" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insertarPedidoMovimientoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insertarPedido">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="tipoPedido" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idUsuario" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insertarPedidoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insertaPedidoDetalle">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idPedido" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idInventario" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idDetalleInv" type="xs:int"/>
+                        <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="cantCajas" type="xs:int"/>
+                        <xs:element minOccurs="0" name="idUsuario" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insertaPedidoDetalleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="iniciarSesion">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="iniciarSesionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_tipo_pedido">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_tipo_pedidoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:TipoPedidoRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_tipo_documento">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_tipo_documentoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:SerieRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_estado_pedido">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_estado_pedidoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:EstadoPedidoRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_pedido_detalle">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idpedido" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_pedido_detalleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:PedidoDetalleRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_pedido">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="condicion" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_pedidoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:PedidoRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_documento_registro">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idarea" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="idserie" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nrodoc" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="get_bus_documento_registroResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:InventarioRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPedidos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idPedido" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPedidosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:PedidoMovimientoRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPedido">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="codPedido" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPedidoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:PedidoRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListaArea">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListaAreaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:AreaRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLisGenerico">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="tabla" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="condicion" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLisGenericoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCombos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="tabla" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCombosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getComboArea">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="tabla" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="filtro" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getComboAreaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBusqueda">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBusquedaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:InventarioRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="datosUsuario">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="datosUsuarioResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:UsuarioRansa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://modelo.ransa.com/xsd">
+            <xs:complexType name="TipoPedidoRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="idTipoPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomTipoPedido" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SerieRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codSerie" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idSerie" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomSerie" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EstadoPedidoRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="idEstadoPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomEstadoPedido" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PedidoDetalleRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="cantCajas" type="xs:int"/>
+                    <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fecCreacion" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="idDetalleInvetario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idInventario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idPedidoDetalle" type="xs:int"/>
+                    <xs:element minOccurs="0" name="indUbicado" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PedidoRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codPedido" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fecCreacion" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fecPedido" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idEstadoPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idTipoPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idUsuarioCreador" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomCliente" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomEstadoPedido" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="stsRegistro" type="xs:byte"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InventarioRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fecInventario" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="idDetalleInventario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idInventario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="listaDetalle" nillable="true" type="ax21:InventarioDetalleRansa"/>
+                    <xs:element minOccurs="0" name="nroDocumento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nroSerie" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InventarioDetalleRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idDetalleInventario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idInventario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nroDocumento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nroSerie" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PedidoMovimientoRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="estadoPedido" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fecFin" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fecInicio" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fecMovimeinto" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="idEstadopedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idPedido" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idPedidoMovimiento" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idUsuarioCreador" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomUsuarioCreador" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomUsuarioUpdate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AreaRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="idArea" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nomArea" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UsuarioRansa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="apellidosUsuario" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codUsuario" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contraSenia" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="correoUsuario" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+                    <xs:element minOccurs="0" name="idUsuario" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nombresUsuario" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tipoUsuario" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getBusquedaRequest">
+        <wsdl:part name="parameters" element="ns:getBusqueda"/>
+    </wsdl:message>
+    <wsdl:message name="getBusquedaResponse">
+        <wsdl:part name="parameters" element="ns:getBusquedaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="insertarPedidoRequest">
+        <wsdl:part name="parameters" element="ns:insertarPedido"/>
+    </wsdl:message>
+    <wsdl:message name="insertarPedidoResponse">
+        <wsdl:part name="parameters" element="ns:insertarPedidoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPedidosRequest">
+        <wsdl:part name="parameters" element="ns:getPedidos"/>
+    </wsdl:message>
+    <wsdl:message name="getPedidosResponse">
+        <wsdl:part name="parameters" element="ns:getPedidosResponse"/>
+    </wsdl:message>
+    <wsdl:message name="iniciarSesionRequest">
+        <wsdl:part name="parameters" element="ns:iniciarSesion"/>
+    </wsdl:message>
+    <wsdl:message name="iniciarSesionResponse">
+        <wsdl:part name="parameters" element="ns:iniciarSesionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCombosRequest">
+        <wsdl:part name="parameters" element="ns:getCombos"/>
+    </wsdl:message>
+    <wsdl:message name="getCombosResponse">
+        <wsdl:part name="parameters" element="ns:getCombosResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPedidoRequest">
+        <wsdl:part name="parameters" element="ns:getPedido"/>
+    </wsdl:message>
+    <wsdl:message name="getPedidoResponse">
+        <wsdl:part name="parameters" element="ns:getPedidoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_estado_pedidoRequest">
+        <wsdl:part name="parameters" element="ns:get_estado_pedido"/>
+    </wsdl:message>
+    <wsdl:message name="get_estado_pedidoResponse">
+        <wsdl:part name="parameters" element="ns:get_estado_pedidoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_tipo_documentoRequest">
+        <wsdl:part name="parameters" element="ns:get_tipo_documento"/>
+    </wsdl:message>
+    <wsdl:message name="get_tipo_documentoResponse">
+        <wsdl:part name="parameters" element="ns:get_tipo_documentoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="insertaPedidoDetalleRequest">
+        <wsdl:part name="parameters" element="ns:insertaPedidoDetalle"/>
+    </wsdl:message>
+    <wsdl:message name="insertaPedidoDetalleResponse">
+        <wsdl:part name="parameters" element="ns:insertaPedidoDetalleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLisGenericoRequest">
+        <wsdl:part name="parameters" element="ns:getLisGenerico"/>
+    </wsdl:message>
+    <wsdl:message name="getLisGenericoResponse">
+        <wsdl:part name="parameters" element="ns:getLisGenericoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_pedido_detalleRequest">
+        <wsdl:part name="parameters" element="ns:get_bus_pedido_detalle"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_pedido_detalleResponse">
+        <wsdl:part name="parameters" element="ns:get_bus_pedido_detalleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_documento_registroRequest">
+        <wsdl:part name="parameters" element="ns:get_bus_documento_registro"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_documento_registroResponse">
+        <wsdl:part name="parameters" element="ns:get_bus_documento_registroResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListaAreaRequest">
+        <wsdl:part name="parameters" element="ns:getListaArea"/>
+    </wsdl:message>
+    <wsdl:message name="getListaAreaResponse">
+        <wsdl:part name="parameters" element="ns:getListaAreaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_pedidoRequest">
+        <wsdl:part name="parameters" element="ns:get_bus_pedido"/>
+    </wsdl:message>
+    <wsdl:message name="get_bus_pedidoResponse">
+        <wsdl:part name="parameters" element="ns:get_bus_pedidoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="insertarPedidoMovimientoRequest">
+        <wsdl:part name="parameters" element="ns:insertarPedidoMovimiento"/>
+    </wsdl:message>
+    <wsdl:message name="insertarPedidoMovimientoResponse">
+        <wsdl:part name="parameters" element="ns:insertarPedidoMovimientoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="get_tipo_pedidoRequest">
+        <wsdl:part name="parameters" element="ns:get_tipo_pedido"/>
+    </wsdl:message>
+    <wsdl:message name="get_tipo_pedidoResponse">
+        <wsdl:part name="parameters" element="ns:get_tipo_pedidoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="datosUsuarioRequest">
+        <wsdl:part name="parameters" element="ns:datosUsuario"/>
+    </wsdl:message>
+    <wsdl:message name="datosUsuarioResponse">
+        <wsdl:part name="parameters" element="ns:datosUsuarioResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getComboAreaRequest">
+        <wsdl:part name="parameters" element="ns:getComboArea"/>
+    </wsdl:message>
+    <wsdl:message name="getComboAreaResponse">
+        <wsdl:part name="parameters" element="ns:getComboAreaResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="UsuarioRansaServiceImplPortType">
+        <wsdl:operation name="getBusqueda">
+            <wsdl:input message="ns:getBusquedaRequest" wsaw:Action="urn:getBusqueda"/>
+            <wsdl:output message="ns:getBusquedaResponse" wsaw:Action="urn:getBusquedaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedido">
+            <wsdl:input message="ns:insertarPedidoRequest" wsaw:Action="urn:insertarPedido"/>
+            <wsdl:output message="ns:insertarPedidoResponse" wsaw:Action="urn:insertarPedidoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPedidos">
+            <wsdl:input message="ns:getPedidosRequest" wsaw:Action="urn:getPedidos"/>
+            <wsdl:output message="ns:getPedidosResponse" wsaw:Action="urn:getPedidosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="iniciarSesion">
+            <wsdl:input message="ns:iniciarSesionRequest" wsaw:Action="urn:iniciarSesion"/>
+            <wsdl:output message="ns:iniciarSesionResponse" wsaw:Action="urn:iniciarSesionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCombos">
+            <wsdl:input message="ns:getCombosRequest" wsaw:Action="urn:getCombos"/>
+            <wsdl:output message="ns:getCombosResponse" wsaw:Action="urn:getCombosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPedido">
+            <wsdl:input message="ns:getPedidoRequest" wsaw:Action="urn:getPedido"/>
+            <wsdl:output message="ns:getPedidoResponse" wsaw:Action="urn:getPedidoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_estado_pedido">
+            <wsdl:input message="ns:get_estado_pedidoRequest" wsaw:Action="urn:get_estado_pedido"/>
+            <wsdl:output message="ns:get_estado_pedidoResponse" wsaw:Action="urn:get_estado_pedidoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_documento">
+            <wsdl:input message="ns:get_tipo_documentoRequest" wsaw:Action="urn:get_tipo_documento"/>
+            <wsdl:output message="ns:get_tipo_documentoResponse" wsaw:Action="urn:get_tipo_documentoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="insertaPedidoDetalle">
+            <wsdl:input message="ns:insertaPedidoDetalleRequest" wsaw:Action="urn:insertaPedidoDetalle"/>
+            <wsdl:output message="ns:insertaPedidoDetalleResponse" wsaw:Action="urn:insertaPedidoDetalleResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLisGenerico">
+            <wsdl:input message="ns:getLisGenericoRequest" wsaw:Action="urn:getLisGenerico"/>
+            <wsdl:output message="ns:getLisGenericoResponse" wsaw:Action="urn:getLisGenericoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido_detalle">
+            <wsdl:input message="ns:get_bus_pedido_detalleRequest" wsaw:Action="urn:get_bus_pedido_detalle"/>
+            <wsdl:output message="ns:get_bus_pedido_detalleResponse" wsaw:Action="urn:get_bus_pedido_detalleResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_documento_registro">
+            <wsdl:input message="ns:get_bus_documento_registroRequest" wsaw:Action="urn:get_bus_documento_registro"/>
+            <wsdl:output message="ns:get_bus_documento_registroResponse" wsaw:Action="urn:get_bus_documento_registroResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListaArea">
+            <wsdl:input message="ns:getListaAreaRequest" wsaw:Action="urn:getListaArea"/>
+            <wsdl:output message="ns:getListaAreaResponse" wsaw:Action="urn:getListaAreaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido">
+            <wsdl:input message="ns:get_bus_pedidoRequest" wsaw:Action="urn:get_bus_pedido"/>
+            <wsdl:output message="ns:get_bus_pedidoResponse" wsaw:Action="urn:get_bus_pedidoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedidoMovimiento">
+            <wsdl:input message="ns:insertarPedidoMovimientoRequest" wsaw:Action="urn:insertarPedidoMovimiento"/>
+            <wsdl:output message="ns:insertarPedidoMovimientoResponse" wsaw:Action="urn:insertarPedidoMovimientoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_pedido">
+            <wsdl:input message="ns:get_tipo_pedidoRequest" wsaw:Action="urn:get_tipo_pedido"/>
+            <wsdl:output message="ns:get_tipo_pedidoResponse" wsaw:Action="urn:get_tipo_pedidoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="datosUsuario">
+            <wsdl:input message="ns:datosUsuarioRequest" wsaw:Action="urn:datosUsuario"/>
+            <wsdl:output message="ns:datosUsuarioResponse" wsaw:Action="urn:datosUsuarioResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getComboArea">
+            <wsdl:input message="ns:getComboAreaRequest" wsaw:Action="urn:getComboArea"/>
+            <wsdl:output message="ns:getComboAreaResponse" wsaw:Action="urn:getComboAreaResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="UsuarioRansaServiceImplSoap11Binding" type="ns:UsuarioRansaServiceImplPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getBusqueda">
+            <soap:operation soapAction="urn:getBusqueda" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedido">
+            <soap:operation soapAction="urn:insertarPedido" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedidos">
+            <soap:operation soapAction="urn:getPedidos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="iniciarSesion">
+            <soap:operation soapAction="urn:iniciarSesion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_documento">
+            <soap:operation soapAction="urn:get_tipo_documento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_estado_pedido">
+            <soap:operation soapAction="urn:get_estado_pedido" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedido">
+            <soap:operation soapAction="urn:getPedido" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCombos">
+            <soap:operation soapAction="urn:getCombos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertaPedidoDetalle">
+            <soap:operation soapAction="urn:insertaPedidoDetalle" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLisGenerico">
+            <soap:operation soapAction="urn:getLisGenerico" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido_detalle">
+            <soap:operation soapAction="urn:get_bus_pedido_detalle" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_documento_registro">
+            <soap:operation soapAction="urn:get_bus_documento_registro" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido">
+            <soap:operation soapAction="urn:get_bus_pedido" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListaArea">
+            <soap:operation soapAction="urn:getListaArea" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedidoMovimiento">
+            <soap:operation soapAction="urn:insertarPedidoMovimiento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_pedido">
+            <soap:operation soapAction="urn:get_tipo_pedido" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getComboArea">
+            <soap:operation soapAction="urn:getComboArea" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="datosUsuario">
+            <soap:operation soapAction="urn:datosUsuario" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="UsuarioRansaServiceImplSoap12Binding" type="ns:UsuarioRansaServiceImplPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getBusqueda">
+            <soap12:operation soapAction="urn:getBusqueda" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedido">
+            <soap12:operation soapAction="urn:insertarPedido" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedidos">
+            <soap12:operation soapAction="urn:getPedidos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="iniciarSesion">
+            <soap12:operation soapAction="urn:iniciarSesion" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_documento">
+            <soap12:operation soapAction="urn:get_tipo_documento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_estado_pedido">
+            <soap12:operation soapAction="urn:get_estado_pedido" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedido">
+            <soap12:operation soapAction="urn:getPedido" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCombos">
+            <soap12:operation soapAction="urn:getCombos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertaPedidoDetalle">
+            <soap12:operation soapAction="urn:insertaPedidoDetalle" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLisGenerico">
+            <soap12:operation soapAction="urn:getLisGenerico" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido_detalle">
+            <soap12:operation soapAction="urn:get_bus_pedido_detalle" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_documento_registro">
+            <soap12:operation soapAction="urn:get_bus_documento_registro" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido">
+            <soap12:operation soapAction="urn:get_bus_pedido" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListaArea">
+            <soap12:operation soapAction="urn:getListaArea" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedidoMovimiento">
+            <soap12:operation soapAction="urn:insertarPedidoMovimiento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_pedido">
+            <soap12:operation soapAction="urn:get_tipo_pedido" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getComboArea">
+            <soap12:operation soapAction="urn:getComboArea" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="datosUsuario">
+            <soap12:operation soapAction="urn:datosUsuario" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="UsuarioRansaServiceImplHttpBinding" type="ns:UsuarioRansaServiceImplPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getBusqueda">
+            <http:operation location="getBusqueda"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedido">
+            <http:operation location="insertarPedido"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedidos">
+            <http:operation location="getPedidos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="iniciarSesion">
+            <http:operation location="iniciarSesion"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_documento">
+            <http:operation location="get_tipo_documento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_estado_pedido">
+            <http:operation location="get_estado_pedido"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPedido">
+            <http:operation location="getPedido"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCombos">
+            <http:operation location="getCombos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertaPedidoDetalle">
+            <http:operation location="insertaPedidoDetalle"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLisGenerico">
+            <http:operation location="getLisGenerico"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido_detalle">
+            <http:operation location="get_bus_pedido_detalle"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_documento_registro">
+            <http:operation location="get_bus_documento_registro"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_bus_pedido">
+            <http:operation location="get_bus_pedido"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListaArea">
+            <http:operation location="getListaArea"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertarPedidoMovimiento">
+            <http:operation location="insertarPedidoMovimiento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="get_tipo_pedido">
+            <http:operation location="get_tipo_pedido"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getComboArea">
+            <http:operation location="getComboArea"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="datosUsuario">
+            <http:operation location="datosUsuario"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="UsuarioRansaServiceImpl">
+        <wsdl:port name="UsuarioRansaServiceImplHttpSoap11Endpoint" binding="ns:UsuarioRansaServiceImplSoap11Binding">
+            <soap:address location="http://10.90.6.140:9090/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.UsuarioRansaServiceImplHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="UsuarioRansaServiceImplHttpSoap12Endpoint" binding="ns:UsuarioRansaServiceImplSoap12Binding">
+            <soap12:address location="http://10.90.6.140:9090/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.UsuarioRansaServiceImplHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="UsuarioRansaServiceImplHttpEndpoint" binding="ns:UsuarioRansaServiceImplHttpBinding">
+            <http:address location="http://10.90.6.140:9090/ServicioRansaNetWs/services/UsuarioRansaServiceImpl.UsuarioRansaServiceImplHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
